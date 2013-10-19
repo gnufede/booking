@@ -201,9 +201,10 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     # Database migration helpers:
-    'south',
     'djfrontend',
     'djfrontend.skeleton',
+    'uni_form',
+    'south',
 )
 
 # Apps specific for this project go here.
