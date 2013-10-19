@@ -7,6 +7,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name='base.html')),
+    (r'^account/', include('profiles.urls')),
+    (r'^', include('auth.urls')),
+
 
     # Examples:
     # url(r'^$', 'booking.views.home', name='home'),

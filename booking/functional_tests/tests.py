@@ -42,10 +42,5 @@ class NewVisitorTest(LiveServerTestCase):
 
         self.check_for_row_in_list_table('2: Use peacock feathers to make a fly')
         self.check_for_row_in_list_table('1: Buy peacock feathers')
- #       self.assertTrue(
- #           any(row.text == '1: Buy peackock feathers' for row in rows)#,
- #           "New to-do item did not appear in table -- it was %s" %\
- #               (table.text,),
- #       )
 
         self.fail('Finish the test!')

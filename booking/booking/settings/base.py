@@ -127,6 +127,13 @@ FIXTURE_DIRS = (
 )
 ########## END FIXTURE CONFIGURATION
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'auth.backends.EmailModelBackend',
+)
+AUTH_PROFILE_MODULE = 'profiles.UserProfile'
+
+
 
 ########## TEMPLATE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
@@ -185,7 +192,7 @@ DJANGO_APPS = (
     'django.contrib.staticfiles',
 
     # Useful template tags:
-    # 'django.contrib.humanize',
+    'django.contrib.humanize',
 
     # Admin panel and documentation:
     'django.contrib.admin',
@@ -195,11 +202,15 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     # Database migration helpers:
     'south',
+    'djfrontend',
+    'djfrontend.skeleton',
 )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
     'tickets',
+    'auth',
+    'profiles',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
