@@ -15,16 +15,16 @@ from django.contrib.auth.tokens import default_token_generator
 
 
 class EmailAuthenticationForm(auth.forms.AuthenticationForm):
-    email = forms.EmailField(label=_(u"Deine Emailadresse"),
-                             max_length=75)
+    #email = forms.EmailField(label=_(u"Your email address"),
+    #                         max_length=75)
 
     def __init__(self, *args, **kwargs):
         super(EmailAuthenticationForm, self).__init__(*args, **kwargs)
-        self.fields.insert(0, 'email', self.fields.pop('email'))
-        del self.fields['username']
+        #self.fields.insert(0, 'email', self.fields.pop('email'))
+        #del self.fields['username']
 
     def clean(self):
-        given_email = self.cleaned_data.get(u'email')
+        given_email = self.cleaned_data.get(u'username')
         given_password = self.cleaned_data.get(u'password')
 
         if given_email and given_password:
@@ -51,7 +51,7 @@ class SetPasswordDuringAccountInitForm(SetPasswordForm):
             c = { 'user': self.user, }
             email_message = loader.render_to_string(email_template_name, c)
 
-            send_mail(subject=_('Willkommen'),
+            send_mail(subject=_('Welcome'),
                       message=email_message,
                       from_email=settings.DEFAULT_FROM_EMAIL,
                       recipient_list=[ self.user.email, ],)

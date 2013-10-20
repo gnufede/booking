@@ -6,6 +6,8 @@ from profiles.views import *
 
 urlpatterns = patterns(
     '',
-    #url(r'^.../$', some_view,
-        #name='some_view'),
+    url(r'^profile/$', profile,
+        name='profile'),
+    url(r'^user_home/$', user_home,
+        name='user_home'),
 )

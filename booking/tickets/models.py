@@ -44,10 +44,12 @@ class Event(TimeStampedModel, TimeFramedModel):
     def __unicode__(self):
         return self.title
 
+class TicketBuyer(models.Model):
+    user = models.OneToOneField(User)
 
 class Ticket(TimeStampedModel):
     event = models.ForeignKey(Event)
-    user = models.ForeignKey(User)
+    owner = models.ForeignKey(TicketBuyer)
     price = models.DecimalField(max_digits=20,decimal_places=2)
 
     def __unicode__(self):

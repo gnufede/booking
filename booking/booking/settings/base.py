@@ -4,6 +4,8 @@
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
+from django.core.urlresolvers import reverse_lazy
+
 
 ########## PATH CONFIGURATION
 # Absolute filesystem path to the Django project directory:
@@ -180,6 +182,8 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = '%s.urls' % SITE_NAME
 ########## END URL CONFIGURATION
 
+LOGIN_URL = reverse_lazy('login')
+LOGIN_REDIRECT_URL = reverse_lazy('profile') 
 
 ########## APP CONFIGURATION
 DJANGO_APPS = (

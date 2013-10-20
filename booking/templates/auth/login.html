@@ -14,7 +14,7 @@
 
         <div>{{form|as_uni_form}}</div>
         <div class="ctrlHolder">
-            <button type="submit">{% trans "Anmelden" %}</button>
+            <button type="submit">{% trans "Sign in" %}</button>
         </div>
 
         <input type="hidden" name="next" value="{{next}}" />
@@ -25,10 +25,10 @@
 
     <p class="right">
         <a href="{% url 'password_reset' %}">
-        {% trans "Hast du dein Passwort vergessen?" %}</a>
+        {% trans "Did you forget your password?" %}</a>
     </p>
     <p>
-    zusätzliche Parameter:
+    additional parameters:
         <ul>
             <li>site: {{site}}</li>
             <li>site_name: {{site_name}}</li>
